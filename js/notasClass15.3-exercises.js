@@ -1,3 +1,12 @@
+
+
+// 9:20 pm
+// Breakouts
+// Equipo 1, con: Noemí, Francisco, Cris
+
+
+
+
 /**
  * Ejercicio 1
  * Funcion que reciba como parametro un arreglo de posts
@@ -609,28 +618,31 @@ let posts = [
   ]
 
 
-  const loadPosts = () => {
-    let template = posts.reduce((acc, cv) => {
-      return acc += `
-        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-        <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">${cv.title}</h5>
-        <small>3 days ago</small>
-        </div>
-        <p class="mb-1">${cv.body}</p>
-        <small>${cv.id}</small>
-        </a>
-      `
-    }, '')
+const loadPosts = () => {
+  let template = posts.reduce((acc, cv) => {
+    return acc += `
+      <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">${cv.title}</h5>
+      <small>3 days ago</small>
+      </div>
+      <p class="mb-1">${cv.body}</p>
+      <small>${cv.id}</small>
+      </a>
+    `
+  }, '')
     
-    document.querySelector('#lista__posts').innerHTML = template
-  } 
+  document.querySelector('#lista__posts').innerHTML = template
+} 
 
-  document.addEventListener('DOMContentLoaded', loadPosts)
-
-
+document.addEventListener('DOMContentLoaded', loadPosts)
 
 
+
+
+  // Noemí proyectó pantalla
+  // Franciso muy-muy avanzado, guiando a Noemí
+  // Solución: Noemí por slack, mil gracias!!
 
 
 

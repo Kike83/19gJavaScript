@@ -27,7 +27,7 @@
     Replicar con JS este markup
  */
 
-
+/*
 
 const tarea1 = () => {
     
@@ -55,19 +55,21 @@ const tarea1 = () => {
 
 }
 
-
+*/
 
 
 
 
 
 /**
+ * Ejercicio 2
  * Dado un arreglo de koders
  * 1. Generar una lista con la clase koders
  * 2. Agregar a cada koder en esa lista
  * 3. A todos los koders agregarles la clase 'item koder'
  */
 
+/*
 let koders =  [
     {
         name: 'jorge luis',
@@ -92,6 +94,13 @@ let koders =  [
     }
 ]
 
+
+*/
+
+
+
+
+
 /**
  * Ejercicio 3
  * Del mismo arreglo de koders
@@ -107,7 +116,7 @@ let koders =  [
  */
 
 
-
+/*
 const tarea3 = () => {
     console.log('Ejecutando tarea 3')
     let tbody = document.querySelector('tbody')
@@ -127,6 +136,7 @@ const tarea3 = () => {
         
     })
 }
+*/
 
 
 /**
@@ -136,8 +146,20 @@ const tarea3 = () => {
  */
 
 
+
+
+
+
+
+
+
+
+
+// El último es el que Jorge resuelve
+
+
 /**
- * Ejercicio 
+ * Ejercicio 4
  * Dado un array de álbumes
  * Imprimir en un grid de cards con los álbumes
  * Cada card debe tener 
@@ -221,16 +243,14 @@ const albumes = [
     }
 ]
 
-/**
- * Tarea
- * Estudiar el tema JavaScript HTML DOM EventListener
- * https://www.w3schools.com/js/js_htmldom_eventlistener.asp
- * https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener
- * https://www.freecodecamp.org/news/javascript-addeventlistener-example-code/
- */
 
-// DOm events
-// 
+
+// el viernes vimos DOm events
+// Joge por slack
+
+
+// usando --> .reduce()
+
 
 let template = albumes.reduce((acc, cv) => {
   return acc += `
@@ -245,6 +265,13 @@ let template = albumes.reduce((acc, cv) => {
     </div>
   `
 }, '')
+
+console.log(template)
+document.querySelector('#cards__albumes').innerHTML = template
+
+
+
+// usando --> .forEach()
 
 
 let templateFor = ''
@@ -263,9 +290,22 @@ albumes.forEach( (cv)=> {
 })
 
 console.log(templateFor)
-document.querySelector('.cards__albumes').innerHTML = templateFor
+document.querySelector('#cards__albumes').innerHTML = templateFor
 
 
+
+
+
+
+
+
+/**
+ * Tarea
+ * Estudiar el tema JavaScript HTML DOM EventListener
+ * https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+ * https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener
+ * https://www.freecodecamp.org/news/javascript-addeventlistener-example-code/
+ */
 
 
 
