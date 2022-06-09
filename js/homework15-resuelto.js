@@ -334,72 +334,57 @@ let users = [
 
 
 const filterUsers = ( strToFilter ) => {
-  
-}
-
-// filterUsers('brad')
-
-
-
-
-
-
-// 7.32 pm
-// Jorge a resolver la tarea
-
-
-const filterUsers = ( strToFilter ) => {
-  // sentencias
   strToFilter = strToFilter.toLowerCase()
-  let filterUsers = users.filer ( (cv, index, arr) => {
+  let filteredUsers = users.filter( (user) => {
     if(
-        cv.name.toLowerCase().includes(strToFilter) ||
-        cv.username.toLowerCase().includes(strToFilter) ||
-        cv.email.toLowerCase().includes(strToFilter)
-      ){
-        // sentencias
-        return user
-      }
-
-
+      user.name.toLowerCase().includes(strToFilter) ||
+      user.username.toLowerCase().includes(strToFilter) ||
+      user.email.toLowerCase().includes(strToFilter)
+    ){
+      return user
+    }
   })
+  return filteredUsers
+}
 
-  return filterUsers
+const printUserList = (usersFiltered) => {
+  let allUserLayout = usersFiltered.reduce((acc, user, idx, arr) => {
+    return acc += `
+    <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">${user.name}</h5>
+      </div>
+      <p class="mb-1">${user.phone}</p>
+      <small>${user.email}</small>
+    </a>
+    `
+  }, '')
 
+  document.getElementById('users__filtered').innerHTML = allUserLayout
 }
 
 
-// 7.45 pm
-/* de Jorge, por chat de zoom
-
-document.querySelector('#filter__user').value
-
-*/
+// cuando cargue la pagina, cargar todos los usuarios
+document.addEventListener('DOMContentLoaded',  printUserList(users) )
 
 let inputSearch = document.getElementById('filter__user')
-
-inputSearch.addEventListener('keyup', () => {
+inputSearch.addEventListener('change', () => {
   // obtener el valor a buscar
   let searchTerm = inputSearch.value
-
   // Filtrar los usuarios
   let usersFiltrados = filterUsers(searchTerm)
-
-  // imprimir en consola
-console.log(usersFiltrados)
-
+  // imprimirlos en consola
+  console.log(usersFiltrados)
   // agregarlos al layout en #lista__users
-  // pintar name, phone, email
+  printUserList(usersFiltrados)
 })
 
-
-
-// 8:05 terminó de resolverlo
-
-
-// 8:08 en equipos, a terminar de resolver
-
-// Breakouts, equipo 4: con Lore, Noemí
+// blur
+// click
+// keyup
+// DOMContentLoaded
+// focus
+// change
 
 
 
